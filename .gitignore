@@ -2,3 +2,4 @@
 **/*.pem
 **/*.log
 config.json
+creds.json

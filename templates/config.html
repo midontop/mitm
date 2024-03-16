@@ -36,6 +36,12 @@
                 Should replays be saved to replays/
             </label>
         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="account_changer" name="account_changer" {% if account_changer %}checked{% endif %}>
+            <label class="form-check-label" for="download_replays">
+                Should your account be changed on the server?
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
@@ -47,12 +53,14 @@
             var offline_weekly = document.getElementById("offline_weekly").checked;
             var offline_normal = document.getElementById("offline_normal").checked;
             var download_replays =  document.getElementById("download_replays").checked;
+            var account_changer = document.getElementById("account_changer").checked;
 
             // Prepare data to send to the API
             var jsonData = {
                 offline_weekly: offline_weekly,
                 offline_normal: offline_normal,
                 download_replays: download_replays,
+                account_changer: account_changer,
                 weekly: weekly
             };
 
