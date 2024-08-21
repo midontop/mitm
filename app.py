@@ -74,7 +74,8 @@ if weekly != "online":
 
 # Create a Logger object
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG if int(os.environ.get("DEBUG", 0)) else logging.INFO)
+logger.setLevel(logging.DEBUG if int(os.environ.get("DEBUG", 0)) == 1 else logging.INFO)
+print(os.environ.get("DEBUG", 0))
 # Create a FileHandler for outputting logs to a file
 fh = logging.FileHandler("debug.log")
 console = logging.StreamHandler(sys.stdout)
